@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_api/main/toolui.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -41,7 +42,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             // ignore: deprecated_member_use
             RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Tools(),
+                  ),
+                );
+              },
               child: Text('Tool ui'),
             ),
           ],
