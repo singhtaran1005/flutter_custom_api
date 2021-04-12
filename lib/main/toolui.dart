@@ -32,7 +32,18 @@ class _ToolsState extends State<Tools> {
           } else if (snapshot.hasData) {
             print(snapshot.data);
             return Center(
-              child: Text("contains data"),
+              child: ListView.builder(
+                itemCount: snapshot.data.length,
+                itemBuilder: (context, i) {
+                  return Container(
+                    color: Colors.cyan,
+                    margin: EdgeInsets.all(10),
+                    child: ListTile(
+                      title: Text(snapshot.data[i]),
+                    ),
+                  );
+                },
+              ),
             );
           }
         },
